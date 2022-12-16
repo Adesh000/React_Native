@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Button from "./src/Components/Button";
 
 export default function App() {
     const [diceOneImage, setOneDiceImage] = useState(
@@ -65,9 +66,7 @@ export default function App() {
                 <Image style={styles.image} source={diceOneImage} />
                 <Image style={styles.image} source={diceTwoImage} />
             </View>
-            <TouchableOpacity onPress={playGame}>
-                <Text style={styles.gameButton}>Click Me!</Text>
-            </TouchableOpacity>
+            <Button playGame={playGame}/>
         </View>
     );
 }
@@ -83,15 +82,5 @@ const styles = StyleSheet.create({
     image: {
         width: 150,
         height: 150,
-    },
-    gameButton: {
-        fontSize: 25,
-        color: "#fff",
-        paddingVertical: 5,
-        paddingHorizontal: 20,
-        borderColor: "#fff",
-        borderWidth: 2,
-        margin: 10,
-        borderRadius: 10,
     },
 });
